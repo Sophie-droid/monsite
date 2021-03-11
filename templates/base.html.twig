@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Candy Shop !{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel ="stylesheet"  href="Candy.css"  >
+        <link rel ="stylesheet"  href="produits.css"  >
+        <link rel ="stylesheet"  href="panier.css"  >
+        <link rel ="stylesheet"  href="moncompte.css"  >
+        <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link href="http://bootswatch.com/4/journal/bootstrap.min.css" rel="stylesheet">
+        
+
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+      
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        
+    </head>
+    <body>
+
+    {% block header %}
+        <h1>Candy Shop</h1>
+
+            <div class="header__box">
+            <a href="/compte" class="header_profil"><i class='bx bxs-user'></i></a>
+            <a href="/panier" class="header_panier"><i class='bx bxs-cart'></i></a>
+        </div>
+        <section class="Accueil" id="Accueil">
+            <div class="Accueil__container bd-grid">
+                <img src="img/marshmallows.jpg" alt="marshmallows" class="marshmallows_img">
+        <hr>
+        <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/produits">produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="panier">panier</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/compte">mon compte</a>
+                </li>
+               <li class="nav-item">
+                    <a class="nav-link" href="/contact">contact</a>
+                </li> 
+               
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+                </li>
+                </ul>
+        <hr>
+    {% endblock %}
+        {% block body %}
+        
+        
+        
+ 
+     <!--==== HOME =====-->
+     <section class="Accueil" id="Accueil">
+        <div class="Accueil__container bd-grid">
+                <img src="img/marshmallows.jpg" alt="marshmallows" class="marshmallows_img">
+                <img src="img/dragibus.png" alt="dragibus" class="dragibus_img">
+                <article class="bonbons">
+                    <span class="bonbons__nom">Dragibus</span>
+                    <span class="bonbons__prix">5.00€</span>
+                    <a href="" class="button-light">Acheter</a>
+                </article>
+                <img src="img/boules de gomme.png" alt="boules de gomme" class="boulesdegomme_img">
+                <article class="sneaker">
+                    <span class="bonbons__nom">Boules de gomme</span>
+                    <span class="bonbons__prix">5.00€</span>
+                    <a href="" class="button-light">Ajouter au panier</a>
+                </article>
+                <img src="img/bonbons fruits.png " alt="bonbons fruits" class="bonbonsfruits_img">
+                <article class="sneaker">
+                    <span class="bonbons__nom">Bonbons aux fruits</span>
+                    <span class="bonbons__prix">5.00€</span>
+                    <a href="" class="button-light">Ajouter au panier</a>
+                </article>
+                <img src="img/sucettes.jpg" alt="sucettes" class="sucettes_img">
+                <article class="sneaker">
+                    <span class="bonbons__nom">Sucettes</span>
+                    <span class="bonbons__prix">5.00€</span>
+                    <a href="" class="button-light">Ajouter au panier</a>
+                </article>
+                <img src="img/bonbons cola.PNG" alt="bonbons cola" class="bonbonscola_img">
+                <article class="bonbons">
+                    <span class="bonbons__nom">Bonbons au cola</span>
+                    <span class="bonbons__prix">5.00€</span>
+                    <a href="" class="button-light">Ajouter au panier</a>
+                </article>  
+            </div>
+               
+        </div>
+    </section>
+        {% endblock %}
+        {% block footer %} 
+        <li class="nav-item">
+            <a class="nav-link" href="/conditionsgenerales">conditions générales</a>
+        </li>
+         
+        <div class="footer__box">
+            <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+            <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+        </div>
+        {% endblock %}
+    </body>
+</html>

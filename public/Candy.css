@@ -1,0 +1,120 @@
+html{
+    background: #E97575;
+    scroll-behavior: smooth;
+}
+.header
+        /*width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: var(--z-fixed);
+        background-color: var(--dark-color-lighten);
+        font-family: 'boxicons';
+        font-weight: normal;
+        font-style: normal;
+        font-variant: normal;
+        line-height: 1;
+        display: inline-block;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;   
+}
+/*===== VARIABLES CSS ======*/
+/*:root{
+    --header-height: 3rem;
+    /*===== Font weight ======*/
+   /* --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+.panier{
+    font-family: 'boxicons';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    display: inline-block;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+
+*/
+.profil{
+    font-family: 'boxicons';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    display: inline-block;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*.body{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    
+    
+
+}*/
+.cartes{
+    display: flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+
+  height: auto;
+}
+.card{
+    height: 5px;
+    width: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+      
+}
+
+top::before{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 11px;
+    position: absolute;
+    width: 1220px;
+    height: 36px;
+    background: #E97575 
+}
+h1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    align-content: flex-start;
+    text-align: center;
+    font-family: 'rye';
+    color: #FFFF;
+    /*font-size: 140px;*/
+    background: #E97575;
+    margin:  0px 0px 250px 0px;
+}
+  
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+.footer{
+    font-family: 'boxicons';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    display: inline-block;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 3rem;
+    font-size: var(--smaller-font-size);
+    color: var(--dark-color-light);
+    text-align: right;
+    font-size: 1.5rem;
+    margin-right:1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-bottom: var(--mb-4);
+}  
