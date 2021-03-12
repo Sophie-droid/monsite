@@ -1,0 +1,16 @@
+.carte{
+    display: flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+
+  height: auto;
+}
+
+.card{
+    height: 5px;
+    width: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+      
+}
+

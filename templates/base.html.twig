@@ -5,9 +5,10 @@
         <title>{% block title %}Candy Shop !{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel ="stylesheet"  href="Candy.css"  >
-        <link rel ="stylesheet"  href="produits.css"  >
+        
         <link rel ="stylesheet"  href="panier.css"  >
         <link rel ="stylesheet"  href="moncompte.css"  >
+        <link href="{{ asset('produits.css') }}" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -62,9 +63,6 @@
     {% endblock %}
         {% block body %}
         
-        
-        
- 
      <!--==== HOME =====-->
      <section class="Accueil" id="Accueil">
         <div class="Accueil__container bd-grid">
