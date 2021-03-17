@@ -4,15 +4,16 @@
 
 {% block body %}
 
-{% for product in products %}
-<div class="card" style="width: 18rem;">
-            <img src="img/boules de gomme.png" alt="boules de gomme" class="boulesdegomme_img">
-        <div class="card-body">
-            <h5 class="card-title">{{product.nom}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="{{ path('cart_add', {'id' : product.id}) }}" class="btn btn-primary">Ajouter au panier</a>
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{ asset('')}}{{produit.image}}" alt="retest" class="boulesdegomme_img">
+            <div class="card-body">
+                <h5 class="card-title"> {{produit.nom}} </h5>
+                <p class="card-text"> {{produit.description}}</p>
+                <a href="/panier/ajouter/{{produit.id}}" class="btn btn-primary">Ajouter au panier</a>
+            </div>
         </div>
-        </div>
-{% endfor %}
+
 
 {% endblock %}
+ 

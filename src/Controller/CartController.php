@@ -13,12 +13,12 @@ use App\Repository\ProduitsRepository;
 class CartController extends AbstractController
 {
     /**
-     * @Route("/panier", name="cart_index")
+     * @Route("/panier", name="cart")
      */
     public function index(SessionInterface $session, ProduitsRepository $productRepository)
     {   
         $panier = $session->get('panier', []);
-
+       dump($panier);
         $panierWithData = [];
 
         foreach($panier as $id => $quantity){
@@ -43,7 +43,7 @@ class CartController extends AbstractController
 
 
      /**
-     * @Route("/panier/add/{id}", name="cart_add")
+     * @Route("/panier/ajouter/{id}", name="cart_add")
      */
     public function add($id, SessionInterface $session ) 
     {
@@ -56,14 +56,15 @@ class CartController extends AbstractController
         $panier[$id] = 1;
         }
         $session->set('panier', $panier);
+        //dump($session->get('panier'));//
         
-        return $this->redirectToRoute("cart_index");
+        return $this->redirectToRoute("cart");
        
     }
     /**
      * @route("/panier/remove/{id}", name="cart_remove")
      */
-    public function remove($id, $session) {
+    public function remove($id, SessionInterface $session) {
         $panier = $session->get('panier', []);
 
         if(!empty($panier[$id])) {
@@ -72,6 +73,7 @@ class CartController extends AbstractController
         
         $session->set('panier', $panier);
 
-        return $this-> redirectToRoute("cart_index");
+        return $this-> redirectToRoute("cart");
     }
 }
+

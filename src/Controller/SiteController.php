@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Produits;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 class SiteController extends AbstractController
 {
@@ -13,8 +15,16 @@ class SiteController extends AbstractController
      */
     public function accueil(): Response
     {
+       
+       $produits = $this->getdoctrine()
+       ->getRepository(Produits::class)
+       ->findAll();
+
+       //dump($produits);//
+
         return $this->render('site/accueil.html.twig', [
             'controller_name' => 'SiteController',
+            'produits' => $produits
         ]);
     }
 
@@ -23,9 +33,32 @@ class SiteController extends AbstractController
      */
     public function produits (): Response
     {
+        $panier = $session->get('panier', []);
+       dump($panier);
+        $panierWithData = [];
+
+        foreach($panier as $id => $quantity){
+            $panierWithData[] = [
+                'product' => $productRepository->find($id),
+                'quantity' => $quantity
+            ];
+        }
+        $total= 0;
+
+        foreach($panierWithData as $item) {
+            $totalItem = $item['product']->getPrix() * $item['quantity'];
+            $total += $totalItem;
+        }
+    
+        return $this->render('cart/index.html.twig', [
+            'items' => $panierWithData,
+            'total' => $total
+        ]);
+       
         return $this->render('site/produits.html.twig', [
             'controller_name' => 'SiteController',
         ]);
+    
     }
 
      /**

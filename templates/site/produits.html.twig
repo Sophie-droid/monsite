@@ -9,7 +9,7 @@
             <h5 class="card-title">Boules de gomme</h5>
             <p class="card-text">Billes de chewing-gum 
             Ces petites billes ont une coque très dure, bien les ramollir dans la bouche avant de les croquer. Bon goût de fruits persistant dans la durée. <br> 6,00 € le kilo</p>
-            <a href="/panier" class="btn btn-primary">Ajouter au panier</a>
+            <a href="{{ path('cart_add', {'id' : product.id}) }}" class="btn btn-primary">Ajouter au panier</a>
         </div>
         </div>
 
