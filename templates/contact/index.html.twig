@@ -10,24 +10,7 @@
     </div>
   {% endfor %}
   
-  {{form_start(contactForm)}}
-
   {{form(contactForm)}}
-     <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Nom</label>
-        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-        <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <a href="" class="btn btn-primary">Envoyer</a>
-        </div>
 
-
-    <h1>Nous contacter </h1>
-    {{ form_end(contactForm)}}
 {% endblock %}
 
