@@ -2,18 +2,61 @@
 
 {% block body %}
 
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+	<script type=" text/javascript">
+		(function () {
+				                emailjs.init("user_4L8v1Nc5OYhXQyuuHn9lh");
+				                })();
+	</script>
+	<script type="text/javascript">
+		window.onload = function () {
+document.getElementById('contact-form').addEventListener('submit', function (event) {
+event.preventDefault();
+emailjs.sendForm('service_w4p95ya', 'contact_form', this).then(function () {
+alert("Votre message a bien été envoyé !");
+}, function (error) {
+alert("Une erreur est survenue, votre message n'a pas été envoyé !");
+});
+});
+}
+	</script>
 
-         <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Nom</label>
-        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-        <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <a href="" class="btn btn-primary">Envoyer</a>
-        </div>
+	<h3>
+		Formulaire de Contact</h3>
 
-{% endblock %}
+	<form id="contact-form">
+		<div class="form-row d-block">
+			<div class="form-group mx-sm-3 mb-2">
+				<inputclass="form-control" type="hidden" name="contact_number"></div>
+				<div class="form-group mx-sm-3 mb-2">
+					<label>Name</label>
+					<input class="form-control" type="text" name="user_name">
+				</div>
+				<div class="form-group mx-sm-3 mb-2">
+					<label>Email</label>
+					<input class="form-control" type="email" name="user_email">
+				</div>
+				<div class="form-group mx-sm-3 mb-2">
+					<label>Message</label>
+					<textarea class="form-control" name="message"></textarea>
+				</div>
+				<div class="form-group mx-sm-3 mb-2 text-center mt-5">
+					<input class="btn btn-info" type="submit" value="envoyer">
+				</div>
+			</div>
+		</form>
+
+		{# <div class="col-md-4">
+						        <label for="validationCustom01" class="form-label">Nom</label>
+						        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+						        <div class="mb-3">
+						        <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+						        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+						        </div>
+						        <div class="mb-3">
+						        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+						        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+						        <a href="" class="btn btn-primary">Envoyer</a>
+						        </div> #}
+
+	{% endblock %}
