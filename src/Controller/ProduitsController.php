@@ -33,7 +33,6 @@ class ProduitsController extends AbstractController
         ->getRepository(Produits::class)
             ->find($id);
 
-            //dump($produit);//
 
             return $this->render('product/index.html.twig', [
                 'produit' => $produit
