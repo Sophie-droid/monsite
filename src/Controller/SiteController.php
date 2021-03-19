@@ -34,7 +34,7 @@ class SiteController extends AbstractController
     public function produits (): Response
     {
         $panier = $session->get('panier', []);
-       dump($panier);
+       //dump($panier);//
         $panierWithData = [];
 
         foreach($panier as $id => $quantity){
