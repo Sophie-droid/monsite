@@ -12,6 +12,7 @@ use App\Repository\ProduitsRepository;
 
 class CartController extends AbstractController
 {
+    
     /**
      * @Route("/panier", name="cart")
      */
@@ -37,9 +38,8 @@ class CartController extends AbstractController
         return $this->render('cart/index.html.twig', [
             'items' => $panierWithData,
             'total' => $total
-        ]);
-       
-    }
+        ]);   
+}
 
 
      /**

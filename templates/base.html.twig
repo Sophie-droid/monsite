@@ -8,10 +8,12 @@
         <link rel ="stylesheet"  href="panier.css">
         {# <link rel ="stylesheet"  href="moncompte.css"> #}
         <link href="{{ asset('produits.css') }}" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
-        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <link href="https://bootswatch.com/4/journal/bootstrap.min.css" rel="stylesheet">
+        {# <link rel="preconnect" href="https://fonts.gstatic.com"> #}
+        {# <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet"> #} 
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> 
+        {# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> #}
+        {# <link href="https://bootswatch.com/4/journal/bootstrap.min.css" rel="stylesheet"> #}
+       
         
 
         {% block stylesheets %}
@@ -20,15 +22,25 @@
 
         
     </head>
-    <body>
+    
+
+    
 
     {% block header %}
-        <h1>Candy Shop</h1>
+        
+
+    <div class = "contenu_header">
+            <div class="Logo__container_bd-grid">
+                <img src="img/logo_Candy.png" alt="Logo" class="logo_Candy_img">
+            </div>
+            <h1>Candy Shop</h1>
 
             <div class="header__box">
-            <a href="/compte" class="header_profil"><i class='bx bxs-user'></i></a>
-            <a href="/panier" class="header_panier"><i class='bx bxs-cart'></i></a>
-        </div>
+                <a href="/compte" class="header_profil"><i class='bx bxs-user'></i></a>
+                <a href="/panier" class="header_panier"><i class='bx bxs-cart'></i></a>
+            </div>
+        
+    </div>
         <section class="Accueil" id="Accueil">
             <div class="Accueil__container bd-grid">
                 <img src="img/marshmallows.jpg" alt="marshmallows" class="marshmallows_img">
@@ -37,15 +49,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Accueil</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/produits">produits</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/panier">panier</a>
-                </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/compte">mon compte</a>
+                    <a class="nav-link" href="/panier">panier</a>
                 </li>
 
                 <li class="nav-item">
@@ -64,14 +70,16 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
                 </li>
                 </ul>
+       
         <hr>
     {% endblock %}
+    
         {% block body %}
         
      <!--==== HOME =====-->
      <section class="Accueil" id="Accueil">
         <div class="Accueil__container bd-grid">
-                <img src="img/marshmallows.jpg" alt="marshmallows" class="marshmallows_img">
+                {# <img src="img/marshmallows.jpg" alt="marshmallows" class="marshmallows_img"> #}
                 <img src="img/dragibus.png" alt="dragibus" class="dragibus_img">
                 <article class="bonbons">
                     <span class="bonbons__nom">Dragibus</span>
@@ -79,24 +87,24 @@
                     <a href="/produits" class="button-light">Acheter</a>
                 </article>
                 <img src="img/boules de gomme.png" alt="boules de gomme" class="boulesdegomme_img">
-                <article class="sneaker">
+                <article class="bonbons">
                     <span class="bonbons__nom">Boules de gomme</span>
                     <span class="bonbons__prix">5.00€</span>
                     <a href="/produits" class="button-light">Ajouter au panier</a>
                 </article>
                 <img src="img/bonbons fruits.png " alt="bonbons fruits" class="bonbonsfruits_img">
-                <article class="sneaker">
+                <article class="bonbons">
                     <span class="bonbons__nom">Bonbons aux fruits</span>
                     <span class="bonbons__prix">5.00€</span>
                     <a href="/produits" class="button-light">Ajouter au panier</a>
                 </article>
                 <img src="img/sucettes.jpg" alt="sucettes" class="sucettes_img">
-                <article class="sneaker">
+                <article class="bonbons">
                     <span class="bonbons__nom">Sucettes</span>
                     <span class="bonbons__prix">5.00€</span>
                     <a href="/produits" class="button-light">Ajouter au panier</a>
                 </article>
-                <img src="img/bonbons cola.PNG" alt="bonbons cola" class="bonbonscola_img">
+                <img src="img/bonbons_cola.PNG" alt="bonbons cola" class="bonbonscola_img">
                 <article class="bonbons">
                     <span class="bonbons__nom">Bonbons au cola</span>
                     <span class="bonbons__prix">5.00€</span>
@@ -107,15 +115,21 @@
         </div>
     </section>
         {% endblock %}
+        
         {% block footer %} 
-        <li class="nav-item">
-            <a class="nav-link" href="/conditionsgenerales">conditions générales</a>
-            <a class="nav-link" href="/mentionslegales">mentions légales</a>
-        </li>
-         
-        <div class="footer__box">
-            <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
-            <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+        
+        <div class="footer">
+        <hr>
+            <div class="nav-footer">
+                <a class="nav-link" href="/conditionsgenerales">conditions générales</a>
+    
+                <a class="nav-link" href="/mentionslegales">mentions légales</a>
+            </div>
+            
+            <div class="footer__box">
+                <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+            </div>
         </div>
         {% endblock %}
     </body>

@@ -1,73 +1,91 @@
+
 html{
-    background: #E97575;
+    
     scroll-behavior: smooth;
 }
-.header
-        /*width: 100%;
-        position: fixed;
-        top: 0;
-        z-index: var(--z-fixed);
-        background-color: var(--dark-color-lighten);
-        font-family: 'boxicons';
-        font-weight: normal;
-        font-style: normal;
-        font-variant: normal;
-        line-height: 1;
-        display: inline-block;
-        text-transform: none;
-        -webkit-font-smoothing: antialiased;   
+
+.contenu_header{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ width: 100%;
+ height: 170px;
 }
-/*===== VARIABLES CSS ======*/
-/*:root{
-    --header-height: 3rem;
-    /*===== Font weight ======*/
-   /* --font-medium: 500;
-    --font-semi-bold: 600;
-    --font-bold: 700;
+.Logo__container_bd-grid{
+    height: 150px;
+    width: 150px;
+    background-color:black;
 
-.panier{
-    font-family: 'boxicons';
-    font-weight: normal;
-    font-style: normal;
-    font-variant: normal;
-    line-height: 1;
-    display: inline-block;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-
-*/
-.profil{
-    font-family: 'boxicons';
-    font-weight: normal;
-    font-style: normal;
-    font-variant: normal;
-    line-height: 1;
-    display: inline-block;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
+}
+.header__box{
+    display: flex;
+    margin-top: 20px;
+    margin-right: 40px;
 }
 
-/*.body{
-    margin: 0px;
+.nav{
     display: flex;
-    flex-direction: column;
-    
-    
-
-}*/
-.cartes{
-    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #E97575;
+    text-decoration: none;
+    list-style: none;
+    width: 33%;
+    padding: 5px;
+}
+a.nav-link.active{
+    text-decoration: none;
+}
+a.nav-link{
+    text-decoration: none;
+    color: #E97575;
+}
+.Accueil{
+    float: left;
+  width: 100%;
+  padding: 5px;
   flex-wrap:wrap;
   flex-direction:row;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;  
+}
+.bonbons{
+    width: 20%;
+}
 
-  height: auto;
+.cartes{
+    width: 80%;
+    height: auto;
+    margin: 0 0 9px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    align-items: stretch;
+    float: left;
+    width: 50%;
+    padding: 5px;
+   
+    
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+   
+    background: 0 0;
+  
+    /* margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+    padding-inline-start: 40px;
+    height: auto;
 }
 .card{
     height: 5px;
     width: 5px;
     margin-left: 5px;
     margin-top: 5px;
-      
 }
 
 top::before{
@@ -79,42 +97,51 @@ top::before{
     position: absolute;
     width: 1220px;
     height: 36px;
-    background: #E97575 
+    
 }
 h1{
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
     align-content: flex-start;
     text-align: center;
-    font-family: 'rye';
-    color: #FFFF;
-    /*font-size: 140px;*/
-    background: #E97575;
+    font-family: "Rye";
+    font-size: 250%;
+    color: #E97575; 
     margin:  0px 0px 250px 0px;
 }
   
 img{
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
+    max-width: 100%;    
+}
+.nav-footer{
+    color:black;
+    margin:0
+}
+
 .footer{
-    font-family: 'boxicons';
-    font-weight: normal;
-    font-style: normal;
-    font-variant: normal;
-    line-height: 1;
-    display: inline-block;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    padding-top: 3rem;
-    font-size: var(--smaller-font-size);
-    color: var(--dark-color-light);
-    text-align: right;
-    font-size: 1.5rem;
-    margin-right:1.25rem;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    margin-bottom: var(--mb-4);
-}  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 350px;
+    margin-bottom: 20px;
+    color:black;
+}
+.footer__box{
+    margin-left: 800px; 
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color:black;
+}
+@media (max-width: 980px){} 
+
+  
+
+ @media only screen and (max-width: 1190px) {
+   
+ }
+     
