@@ -1,16 +1,77 @@
+.contenu_header{
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  width: 100%;
+  /* height: px; */
+ }
+ /* .Logo__container_bd-grid{
+     height: 150px;
+     width: 150px;
+     background-color:black;
+ } */
+ .header__box{
+  display: flex;
+  margin-top: 20px;
+  margin-right: 40px;
+}
+img{
+  border-radius:10%;
+}
+.hr{
+  width: 80%;
+}
+.nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #E97575;
+  text-decoration: none;
+  list-style: none;
+  width: 33%;
+  padding: 5px;
+} 
+a.nav-link.active{
+  text-decoration: none;
+}
+a.nav-link{
+  text-decoration: none;
+  color: #E97575;
+}
 .carte{
+   
     display: flex;
-  flex-wrap:wrap;
-  flex-direction:row;
-
-  height: auto;
+    flex-wrap:wrap;
+    flex-direction:row;
+    height: auto;
 }
 
 .card{
+    
     height: 5px;
     width: 5px;
     margin-left: 5px;
-    margin-top: 5px;
-      
+    margin-top: 5px;    
+}
+.nav-footer{
+  color:black;
+  margin:0
+}
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 350px;
+  margin-bottom: 20px;
+  color:black;
+}
+.footer__box{
+  margin-left: 800px; 
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color:black;
 }
 

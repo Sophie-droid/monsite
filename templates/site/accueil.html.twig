@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil Candy Shop!
-{% endblock %}
+{% block title %}Accueil Candy Shop!{% endblock %}
 
 
 {% block body %}
@@ -13,7 +12,7 @@
 				<div class="card-body">
 					<h5 class="card-title">{{produit.nom}}</h5>
 					<p class="card-text">{{produit.prix}}</p>
-					<a href="/produit/{{produit.id}}" class="btn btn-primary">VOIR LE DETAIL</a>
+					<a href="/produit/{{produit.id}}" class="btn-primary">VOIR LE DETAIL</a>
 				</div>
 			</div>
 		{% endfor %}
