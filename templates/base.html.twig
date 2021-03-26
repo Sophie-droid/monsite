@@ -8,7 +8,8 @@
         {% block stylesheets %}
         <script src="https://js.stripe.com/v3/"></script>
         <link rel ="stylesheet"  href="Candy.css">
-        {# <link rel ="stylesheet"  href="panier.css"> #}
+        <link rel ="stylesheet"  href="panier.css"> 
+        <link rel ="stylesheet"  href="login.css">
         {# <link rel ="stylesheet"  href="produits.css"> #}
         {# <link rel ="stylesheet"  href="moncompte.css"> #}
         <link href="{{ asset('produits.css') }}" rel="stylesheet">
@@ -40,7 +41,7 @@
                 <a href="/panier" class="header_panier"><i class='bx bxs-cart'></i></a>
             </div>
         
-    </div>
+    
         <section class="Accueil" id="Accueil">
             <div class="Accueil__container bd-grid">
                 <img src="img/marshmallows.jpg" alt="marshmallows" class="marshmallows_img">
@@ -56,7 +57,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/inscription">inscription</a>
+                    <a class="nav-link" href="{{ path('security_registration')}}">inscription</a>
                 </li>
 
                 <li class="nav-item">
@@ -76,7 +77,9 @@
                 </li>
         </ul>
         </section>
+
         <hr>
+        </div>
     {% endblock %}
     
         {% block body %}
@@ -89,7 +92,7 @@
                 <article class="bonbons">
                     <span class="bonbons__nom">Dragibus</span>
                     <span class="bonbons__prix">5.00€</span>
-                    <a href="/produits" class="button-light">Acheter</a>
+                    <a href="/produits" class="button-light">Ajouter au panier</a>
                 </article>
                 <img src="img/boules de gomme.png" alt="boules de gomme" class="boulesdegomme_img">
                 <article class="bonbons">
@@ -122,9 +125,10 @@
         {% endblock %}
         
         {% block footer %} 
-        
+       
         <div class="footer">
         <hr>
+        
             <div class="nav-footer">
                 <a class="nav-link" href="/conditionsgenerales">conditions générales</a>
     
