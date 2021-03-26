@@ -1,7 +1,4 @@
-*{
-    margin:0;
-    padding:0;
-}
+
 
 .logo_Candy_img{
     width: 150px;
@@ -11,6 +8,15 @@
     display: flex;
     margin-left: 90%;
     width: 50px;
+    min-height: 20vh;
+}
+.Logo__container_bd-grid {
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1)),
+    url(/img/marshmallows.jpg) no-repeat center center;
+    background-size: cover;
+}
+.contenu_header {
+    min-height: 30vh;
 }
 
 .nav{
@@ -23,6 +29,7 @@
     list-style: none;
     width: 100%;
     padding: 5px;
+    max-width:calc(100% - 10px)
 }
 a.nav-link.active{
     text-decoration: none;
@@ -33,7 +40,8 @@ a.nav-link{
 }
 
 .marshmallows_img{
-    
+
+    max-width:100%
     margin-top: 90px;
 
 }
@@ -48,19 +56,31 @@ a.nav-link{
     flex-direction: row;
     justify-content: space-around; 
     align-items: stretch;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: end;
     float: left;
     width: 90%;
-    padding: 5px; 
+    padding: 32px 5px; 
+    width: calc(100% - 46px);
+    padding: 5px;
     border: 0;
     outline: 0;
     padding-inline-start: 40px;
     height: auto;
+    height: 100%;
+    background:  #f3f3f3;
 }
 .card{
-    height: 10px;
-    width: 10px;
+
+    height: 170px;
+    padding: 20px;
     margin-left: 10px;
     margin-top: 10px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 h1{
@@ -78,18 +98,19 @@ h1{
 img{
     border-radius: 5%;
     
+    width: 100px;
+    
 }
 .button-light{
     font-family: "Rye";
-    display:block;
-    width:150px;
-    line-height:50px;
-    text-align:center;
-    /* vertical-align:middle; */
-    background:#E97575;
-    color:white;
-    border-radius: 10%;
-    text-decoration:none;
+        text-align:center;
+        background:#E97575;
+        color:white;
+        font-family: "Rye";
+        border-radius:10%;
+        border-radius: 4px;
+        text-decoration:none;
+        text-align: center;
 }
 .btn-primary{
     display:flex;
@@ -100,8 +121,9 @@ img{
     background:#E97575;
     color:white;
     font-family: "Rye";
-    border-radius:10%;
+    border-radius:4px;
     text-decoration:none;
+    padding: 3px 5px;
 }
     
 .nav-footer{
@@ -116,7 +138,8 @@ img{
 }
 
 .footer{
-    
+  position:fixed;
+  bottom:0;  
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
@@ -126,17 +149,7 @@ img{
     
 }
 .footer__box{
-    /* margin-left: 90%; 
-    width: 100%;
-    margin-bottom: 5px;
-    color:black; */
-    margin-left: 26%; 
-  width: 100%;
-  margin-bottom: 0px;
-  color:black;
-
-  bottom:0;
-    
+   
 }
 @media (max-width: 980px){} 
 

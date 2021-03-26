@@ -6,12 +6,20 @@
 
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   text-align:center;
+  padding: 3px 5px;
   background:#E97575;
   color:white;
   font-family: "Rye";
+  transition: all 0.5s ease-out;
+  border-radius:4px;
+
+}
+a.btn-primary:hover {
+  background: #fff;
+  color: #E97575;
 }
 
 
