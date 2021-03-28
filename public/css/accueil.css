@@ -122,6 +122,8 @@ img{
 }
 
 .footer{
+    z-index: 1;
+    background: #fff;
   position:fixed;
   bottom:0;  
   flex-direction: row;

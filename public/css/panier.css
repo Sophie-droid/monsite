@@ -2,3 +2,89 @@
     margin:0;
     padding:0;
 }
+.card.only img {
+    width: auto;
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 24px;
+}
+.card.only h5 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.card.only .card-text {
+    max-width: 100%;
+    text-align: left;
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+.card.only {
+    box-shadow: none;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.card.only .btn-primary {
+    max-width: calc(100% - 20px);align-self: center;
+}
+  
+     
+      
+.card.only .card-body {
+ margin-top: 15px;
+background: #f3f3f3;
+justify-content: center;
+display: flex;
+flex-direction: column;
+padding: 20px;
+border-radius: 8px;
+} 
+table.table {
+    border: solid 1px rgba(176, 176, 176, 0.2);
+    max-width: 100%;
+    table-layout: fixed;
+    width: 1000px;
+    margin: 24px auto 0;
+    max-width: 100%;
+}
+
+thead {
+    background: #f3f3f3;
+}
+
+th {
+    color:#f3f3f3;
+    text-transform: capitalize;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(242, 242, 242, 0.9);
+}
+
+td {
+    text-align: center;
+    word-break: break-all;
+    padding: 8px;
+    height: 70px;
+}
+ a.btn-primary {
+    max-width: 300px;
+    margin: 24px auto;
+    text-transform: uppercase;
+}
+
+thead tr th {
+    background: #E97575;
+}
+
+table.table {
+    border: solid 1px rgba(176, 176, 176, 0.2);
+    max-width: 100%;
+    table-layout: fixed;
+    width: 1000px;
+    margin: 24px auto 0;
+    max-width: 100%;
+} 

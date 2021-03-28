@@ -19,23 +19,23 @@
                 <th>Prix</th>
                 <th>Quantité</th>
                 <th>Total</th>
-                <th></th>
+                
             </tr>
         </thead>
         <tbody>
             {% for item in items %}
                 <tr>
-                    <td>{{ item.product.image}}</td>
+                   <td><img src="{{ asset('')}}{{item.product.image}}"/></td>
                     <td>{{ item.product.nom}}</td>
                     <td>{{ item.product.prix}}</td>
                     <td>{{ item.quantity}}</td>
                     <td>{{ item.product.prix * item.quantity }}</td>
-                    <td>
+                    
                         <a href="{{ path('cart_remove', {'id' : item.product.id}) }}" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash"></a>
                         </a>
                         
-                    </td>
+                  
                 </tr>
                 
             {% endfor %}
