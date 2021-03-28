@@ -2,7 +2,9 @@
   margin:0;
   padding:0;
 }  */
-
+.body{
+  height:calc(100vh + 70px);
+}
 .header__box{
     display: flex;
     margin-left: 90%;
