@@ -1,9 +1,10 @@
 
 
-.logo_Candy_img{
+/* .logo_Candy_img{
     width: 150px;
     height:150px;
-}
+} */
+
 .header__box{
     display: flex;
     margin-left: 90%;
@@ -37,20 +38,14 @@ a.nav-link.active{
 a.nav-link{
     text-decoration: none;
     color: #E97575;
-}
-
-.marshmallows_img{
-
-    max-width:100%
-    margin-top: 90px;
-
+    padding: 0 16px;
 }
 .bonbons{
     width: 20%;
 }
 
 .cartes{
-    height: auto;
+    
     margin: 0 0 9px;
     display: flex;
     flex-direction: row;
@@ -67,9 +62,10 @@ a.nav-link{
     border: 0;
     outline: 0;
     padding-inline-start: 40px;
-    height: auto;
-    height: 100%;
-    background:  #f3f3f3;
+    height: calc(70vh - 97px);
+    /* background:  #f3f3f3; */
+    margin-top: 60px;
+   
 }
 .card{
 
@@ -81,6 +77,8 @@ a.nav-link{
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
 h1{
@@ -97,9 +95,9 @@ h1{
   
 img{
     border-radius: 5%;
-    
-    width: 100px;
-    
+    /* height: 100px;
+    width: 150px;
+     */
 }
 .button-light{
     font-family: "Rye";
@@ -129,11 +127,9 @@ img{
 .nav-footer{
     display: flex;
     border-top: 1px,solid,rgb(185, 183, 183);
-    color:black;
-    margin-right: 50%;
-    display: flex;
     flex-direction: row;
     align-content: space-around;
+   
   
 }
 
@@ -143,15 +139,72 @@ img{
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
-  margin-top: 300px;
-  margin-bottom: 0px;
   
-    
+  
 }
 .footer__box{
-   
+  padding: 5px 16px; 
 }
-@media (max-width: 980px){} 
+.logo_Candy_img {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    /* min-width: 255px;
+    max-width: 315px; */
+    width: 100%;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); */
+   
+  }
+  .logo_Candy_img img {
+    width: 150px;
+    height: 150px;
+    /* max-width: 100%; */
+    vertical-align: top;
+    -webkit-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  .logo_Candy_img:hover img,
+  .logo_Candy_img.hover img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  /* .candy {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 255px;
+    max-width: 315px;
+    height: 220px;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  }
+  .candy img {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    -webkit-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+  }
+  .candy:hover img,
+  .candy.hover img {
+    -webkit-transform: translateX(130px);
+    transform: translateX(130px);
+  } */
+  /* Demo purposes only
+  body {
+    background-color: #212121;
+  } */
+  .card-body{
+    margin-top:15px;
+  }
+@media screen and (max-width: 780px) {}
+
+/* @media screen and (min-width: 980px){
+
+        flex-flow: row wrap;
+}  */
 
   
 

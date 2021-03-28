@@ -42,13 +42,23 @@ class PaymentController extends AbstractController
         ]);
     }
      /**
-     * @Route("create-checkout-session", name="checkout")
+     * @Route("/create-checkout-session /{id}", name="checkout")
      */
-    public function checkout():JsonResponse
+    public function checkout($id):JsonResponse
     {
         \Stripe\Stripe::setApiKey('sk_test_51IYyyULDcAnwvEyZPGHybF6JZCVdaCXRzbT2JvPur8StsbpvmyZXOQTF9jFBu8Ybsdiu7DPxyLEw208Rodk7dfgm00adufznh4');
         
+//RECUPERER LA COMMANDE EN BASE DE DONNEES //
 
+//     $create = $this->getDoctrine(): ManagerRegistry
+//     ->getRepository(checkout::class)
+//         ->find($id) ;
+
+//         return $this->render('order/index.html.twig', [
+//             'checkout' => $create-checkout-session
+           
+//           ]);
+// }
 
         $session = \Stripe\Checkout\Session::create([
             'payment_method_types' => ['card'],
@@ -56,9 +66,9 @@ class PaymentController extends AbstractController
               'price_data' => [
                 'currency' => 'eur',
                 'product_data' => [
-                  'name' => 'BONBON',
+                  'name' => '',
                 ],
-                'unit_amount' => 2000,
+                'unit_amount' => 2000,//ordertotal//
               ],
               'quantity' => 1,
             ]],

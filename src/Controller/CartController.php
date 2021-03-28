@@ -79,37 +79,6 @@ class CartController extends AbstractController
 
         return $this-> redirectToRoute("cart");
     }
-
-      /**
-     * @Route("/create-checkout-session", name="checkout")
-     */
-    public function checkout(UrlGeneratorInterface $urlGeneratorInterface):response
-    {
-        \Stripe\Stripe::setApiKey('sk_test_51IYeeVGYmr5sIrV4Gp6kc37Xrk6s2JoK2wrcn0ot2lOi61bldJPK1ASRcD2Bc8x1RenclqOzqbu0sEfdMCCTcQZ500F2TIxabj');
-        
-        $session = \Stripe\Checkout\Session::create([
-            'payment_method_types' => ['card'],
-            'line_items' => [[
-              'price_data' => [
-                'currency' => 'eur',
-                'product_data' => [
-                  'name' => 'BONBON',
-                ],
-                'unit_amount' => 20,
-              ],
-              'quantity' => 1,
-            ]],
-            'mode' => 'payment',
-            'success_url' => $this->generateUrl('success', [], UrlGeneratorInterface::ABSOLUTE_URL),
-            'cancel_url' => $this->generateUrl('error', [], UrlGeneratorInterface::ABSOLUTE_URL),
-          
-      
-        ]);
-
-        return new JsonResponse([ 'id' => $session->id ]);
-   
-    }
-
 }
     // /**
     //  * @Route("/panier/acheter/payment", name="payment")

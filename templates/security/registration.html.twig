@@ -7,7 +7,8 @@
 	<div class="flex items-center justify-center font-body m-8">
 		<div class="w-full max-w-md bg-white shadow-lg rounded px-6 lg:px-12 pt-6 pb-8 mb-4">
 			<div class="text-dark-orange text-xl font-bold flex justify-center border-b-2 py-2 mb-4">
-				<h1>Créer un compte</h1>
+				<h3>Créer un compte</h3>
+				{# <h1 class="h3 mb-3 font-weight-normal">Créer un compte</h1> #}
 			</div>
 			<div class="mb-4">
 				{{ form_label(form.email, 'E-mail*', {'label_attr': {'class':'block text-gray-700 text-sm lg:text-base font-normal mb-2'}}) }}
@@ -19,8 +20,7 @@
 			</div>
 			<p class="text-gray-600 text-xs mb-2 text-center">*Champs obligatoires</p>
 			<div class="flex items-center justify-between">
-				<button class="m-auto px-4 py-2 rounded text-dark-red font-bold inline-block shadow-lg bg-light-blue hover:bg-blue-400 transform hover:scale-110" type="submit">
-					Valider
+				<button class="m-auto px-4 py-2 rounded text-dark-red font-bold inline-block shadow-lg bg-light-blue hover:bg-blue-400 transform hover:scale-110" type="submit">Valider
 				</button>
 			</div>
 		</div>

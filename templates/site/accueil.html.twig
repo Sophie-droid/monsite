@@ -7,11 +7,14 @@
 
 	<div class="cartes">
 		{% for produit in produits %}
-			<div class="card" >
-				<img src="{{produit.image}}" alt="dragibus" class="dragibus_img">
+			<div class="card">
+			<figure class="candy">
+                    <a href="/"><img src="{{produit.image}}" alt="dragibus"/></a>
+                </figure>
+				{# <img src="{{produit.image}}" alt="dragibus" class="dragibus_img"> #}
 				<div class="card-body">
 					<h5 class="card-title">{{produit.nom}}</h5>
-					<p class="card-text">{{produit.prix}}</p>
+					{# <p class="card-text">{{produit.prix}}</p> #}
 					<a href="/produit/{{produit.id}}" class="btn-primary">VOIR LE DETAIL</a>
 				</div>
 			</div>

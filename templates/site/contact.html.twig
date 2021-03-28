@@ -1,4 +1,8 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+
+{% endblock %}
 
 {% block body %}
 
@@ -21,10 +25,10 @@ alert("Une erreur est survenue, votre message n'a pas été envoyé !");
 }
 	</script>
 
-	<h3>
-		Formulaire de Contact</h3>
-
+	
 	<form id="contact-form">
+	    <h3>Formulaire de Contact</h3>
+
 		<div class="form-row d-block">
 			<div class="form-group mx-sm-3 mb-2">
 				<inputclass="form-control" type="hidden" name="contact_number"></div>

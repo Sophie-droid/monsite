@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+} 
+
+#container{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+}
+/* Bordered form */
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    height: auto;
+  
+}
+#container h3{
+    width: 25%;
+    margin: 0 auto;
+    padding-bottom: 70px;
+}
+/* Full-width inputs */
+    /* input[type=hidden], input[type=text], input[type=email], input[type=textarea] {  */ 
+input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+input[type=textarea]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+    background-color: #E97575;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: #E97575;
+    border: 1px solid #E97575;
+}

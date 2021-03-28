@@ -46,10 +46,11 @@
             
         </tfoot>
     </table>
-     <button id="checkout-button">Acheter</button>
+    
+     <a href="{{ path('order_create') }}">valider votre commande</a>
     {# <a href="#" class="button-light">Acheter</a> #}
 {% else %}
-    <p>Votre panier est vide!</p>
+    <h1>Votre panier est vide!</h1>
 {% endif %}
 {% block javascripts %}
   <script type="text/javascript">
@@ -83,7 +84,5 @@
       });
     </script>
 {% endblock %}
-
-
-    
+   
 {% endblock %}

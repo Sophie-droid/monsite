@@ -30,11 +30,7 @@ input[type=email], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
- /* .connexion{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 400px;
-} */
+
 /* Set a style for all buttons */
 input[type=submit] {
     background-color: #E97575;

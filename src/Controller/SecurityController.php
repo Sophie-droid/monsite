@@ -31,7 +31,7 @@ class SecurityController extends AbstractController
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
-
+    
     /**
      * @Route("/logout", name="app_logout")
      */
@@ -62,7 +62,7 @@ class SecurityController extends AbstractController
       if ($user->getId()) {
         $this->addFlash('success', 'Votre compte a bien été créé.');
       } else {
-        $this->addFlash('error', 'Votre compte n\'a pas pu être créé.');
+        $this->addFlash('error', 'Votre compte n\a pas pu être créé.');
       }
 
       return $this->redirectToRoute('app_login');
