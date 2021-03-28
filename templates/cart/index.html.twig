@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Votre panier !{% endblock %}
-{% block stylesheets %}<script src="https://js.stripe.com/v3/"></script>{% endblock %}
-{% block body %}
 
+
+{% block body %}
+<script src="https://js.stripe.com/v3/"></script>
 
 {% if items | length > 0 %}
     <table class="table">
