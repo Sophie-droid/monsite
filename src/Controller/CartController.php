@@ -23,7 +23,7 @@ class CartController extends AbstractController
     public function index(SessionInterface $session, ProduitsRepository $productRepository)
     {   
         $panier = $session->get('panier', []);
-       dump($panier);
+      
         $panierWithData = [];
 
         foreach($panier as $id => $quantity){
@@ -79,23 +79,44 @@ class CartController extends AbstractController
 
         return $this-> redirectToRoute("cart");
     }
-}
-    // /**
-    //  * @Route("/panier/acheter/payment", name="payment")
-    //  */
-    // public function payment($id,SessionInterface $session, ProduitsRepository $productRepository, UrlGeneratorInterface $urlGeneratorInterface )
-    // {
-    //     \Stripe\Stripe::setApiKey('sk_test_51IYeeVGYmr5sIrV4Gp6kc37Xrk6s2JoK2wrcn0ot2lOi61bldJPK1ASRcD2Bc8x1RenclqOzqbu0sEfdMCCTcQZ500F2TIxabj');
-    //     return $this->render('payment/index.html.twig', [
-    //         'controller_name' => 'PaymentController',
-    //         'mode' => 'payment',
-    //         'success_url' => $this->generateUrl('success', [], UrlGeneratorInterface::ABSOLUTE_URL),
-    //         'cancel_url' => $this->generateUrl('error', [], UrlGeneratorInterface::ABSOLUTE_URL),
-    //       ]);
-    //       return new JsonResponse([ 'id' => $session->id ]);
 
-    //       return $this->redirectToRoute("payment");
-    // }
+    /**
+     * @Route("/panier/acheter/payment", name="payment")
+     */
+    public function payment(SessionInterface $session, ProduitsRepository $productRepository, UrlGeneratorInterface $urlGeneratorInterface )
+    {
+
+        $panier = $session->get('panier', []);
+        //dump($panier);
+         $panierWithData = [];
+ 
+         foreach($panier as $id => $quantity){
+             $panierWithData[] = [
+                 'product' => $productRepository->find($id),
+                 'quantity' => $quantity
+             ];
+         }
+         $total= 0;
+ 
+         foreach($panierWithData as $item) {
+             $totalItem = $item['product']->getPrix() * $item['quantity'];
+             $total += $totalItem;
+         }
+     
+        \Stripe\Stripe::setApiKey('sk_test_51IYyyULDcAnwvEyZPGHybF6JZCVdaCXRzbT2JvPur8StsbpvmyZXOQTF9jFBu8Ybsdiu7DPxyLEw208Rodk7dfgm00adufznh4');
+        return $this->render('payment/index.html.twig', [
+            'items' => $panierWithData,
+            'total' => $total,
+            'controller_name' => 'PaymentController',
+            'mode' => 'payment',
+            'success_url' => $this->generateUrl('success', [], UrlGeneratorInterface::ABSOLUTE_URL),
+            'cancel_url' => $this->generateUrl('error', [], UrlGeneratorInterface::ABSOLUTE_URL),
+          ]);
+          return new JsonResponse([ 'id' => $session->id ]);
+
+          return $this->redirectToRoute("payment");
+    }
+}
 
 
     

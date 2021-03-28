@@ -15,7 +15,7 @@ use Stripe\Stripe;
 class PaymentController extends AbstractController
 {
     /**
-     * @Route("/payment", name="payment")
+     * @Route("/payment", name="payment_stripe")
      */
     public function index(UrlGeneratorInterface $urlGeneratorInterface)
     {
@@ -42,7 +42,7 @@ class PaymentController extends AbstractController
         ]);
     }
      /**
-     * @Route("/create-checkout-session /{id}", name="checkout")
+     * @Route("/create-checkout-session/{id}", name="checkout")
      */
     public function checkout($id):JsonResponse
     {
@@ -62,13 +62,13 @@ class PaymentController extends AbstractController
 
         $session = \Stripe\Checkout\Session::create([
             'payment_method_types' => ['card'],
-            'line_items' => [[
-              'price_data' => [
+            'line_items' => $panierWidthData,[[
+              'price_data' =>  [
                 'currency' => 'eur',
                 'product_data' => [
                   'name' => '',
                 ],
-                'unit_amount' => 2000,//ordertotal//
+                'unit_amount' => 2000,
               ],
               'quantity' => 1,
             ]],

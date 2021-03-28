@@ -7,15 +7,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         {% block stylesheets %}
         <script src="https://js.stripe.com/v3/"></script>
-        <link rel ="stylesheet"  href="css/Candy.css">
-        <link rel ="stylesheet"  href="css/panier.css"> 
-        <link rel ="stylesheet"  href="css/login.css">
-        <link rel ="stylesheet"  href="css/contact.css">
-        <link rel ="stylesheet"  href="css/registration.css">
+        <link rel ="stylesheet"  href="{{ asset('css/Candy.css') }}">
+        <link rel ="stylesheet"  href="/css/accueil.css"> 
+        <link rel ="stylesheet"  href="/css/panier.css"> 
+        <link rel ="stylesheet"  href="/css/login.css">
+        <link rel ="stylesheet"  href="/css/contact.css">
+        <link rel ="stylesheet"  href="/css/registration.css">
         {# <link rel ="stylesheet"  href="produits.css"> #}
         {# <link rel ="stylesheet"  href="moncompte.css"> #}
         <script src="https://www.canva.com/design/DAEVuXL5hcE/Flmk9d49oJJkP86zBeWyEA/watch?utm_content=DAEVuXL5hcE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"></script>
-        <link href="{{ asset('produits.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/produits.css') }}" rel="stylesheet">
         {# <link rel="preconnect" href="https://fonts.gstatic.com"> #}
         {# <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet"> #} 
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> 
@@ -36,9 +37,10 @@
     <div class = "contenu_header">
             <div class="Logo__container_bd-grid">
             <figure class="logo_Candy_img">
-                <a class="image_logo"href="/"><img src="img/logo_Candy.png" alt="Logo" /></a>
+            
+                <a class="image_logo"href="/"><img src="/img/logo_Candy.png" alt="Logo" /></a>
             </figure>
-                {# <img src="img/logo_Candy.png" alt="Logo" class="logo_Candy_img"> #}
+                
             </div>
             <h1>Candy Shop</h1>
 
@@ -91,11 +93,11 @@
      <!--==== HOME =====-->
      <section class="Accueil" id="Accueil">
         <div class="Accueil__container bd-grid">
-                {# <img src="img/marshmallows.jpg" alt="marshmallows" class="marshmallows_img"> #}
+                 <img src="img/marshmallows.jpg" alt="marshmallows" class="marshmallows_img"> 
                 
-                <figure class="candy">
+                {# <figure class="candy">
                     <a href="#"><img src="img/dragibus.png" alt="dragibus"/></a>
-                </figure>
+                </figure> #}
                 <img src="img/dragibus.png" alt="dragibus" class="dragibus_img"> 
                 <article class="bonbons">
                     <span class="bonbons__nom">Dragibus</span>
@@ -149,5 +151,7 @@
             </div>
         </div>
         {% endblock %}
+        {% block javascripts %}
+         {% endblock %}
     </body>
 </html>

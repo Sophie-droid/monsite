@@ -3,7 +3,59 @@
 {% block title %}Hello PaymentController!{% endblock %}
 {% block stylesheets %}<script src="https://js.stripe.com/v3/"></script>{% endblock %}
 {% block body %}
- <h1>Un BONBON</h1>
+ <h1>Récapitulatif de votre commande</h1>
+
+
+
+{% if items | length > 0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>image</th>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.product.image}}</td>
+                    <td>{{ item.product.nom}}</td>
+                    <td>{{ item.product.prix}}</td>
+                    <td>{{ item.quantity}}</td>
+                    <td>{{ item.product.prix * item.quantity }}</td>
+                    <td>
+                        <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></a>
+                        </a>
+                        
+                    </td>
+                </tr>
+                
+            {% endfor %}
+        </body>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total : </td>
+                <td>{{ total }}</td>
+                
+                <td></td>
+
+            </tr>
+            
+        </tfoot>
+    </table>
+    
+   {#  <a href="{{ path('payment') }}">valider votre commande</a>
+     <a href="#" class="button-light">Acheter</a> #}
+  {% else %}
+    <h1>Votre panier est vide!</h1>
+{% endif %}
+
+
  <button id="checkout-button">Acheter</button> 
  
 {% endblock %}
@@ -12,8 +64,9 @@
       // Create an instance of the Stripe object with your publishable API key
       var stripe = Stripe('pk_test_51IYyyULDcAnwvEyZG4Pt7SOuE5Hdkz1G0LGKpX0BRvjrT6CX8UwFbgSta42lS3z0rh7q9rDak5V4JtW0G44cKExM00zILEeWvb');
       var checkoutButton = document.getElementById('checkout-button');
-
+       console.log('hello worlds 1');
       checkoutButton.addEventListener('click', function() {
+        console.log('hello worlds');
         // Create a new Checkout Session using the server-side endpoint you
         // created in step 3.
         fetch('/create-checkout-session', {

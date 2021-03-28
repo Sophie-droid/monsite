@@ -52,25 +52,26 @@ class OrderController extends AbstractController
       return $this->redirectToRoute('index');
     }
   }
-
-  /**
-   * @Route("/commandes/historique", name="order_history")
-   */
-  public function getByCurrentUser(Security $security): Response
-  {
-    $user = $security->getUser();
-    $orders = [];
-
-    if($user){
-      $bdd_user = $this->getDoctrine()
-        ->getRepository(User::class)
-        ->find($user->getId());
-
-      $orders = $bdd_user->getOrders();
-    }
-
-    return $this->render('order/index.html.twig', [
-      'orders' => $orders,
-    ]);
-  }
 }
+
+//   /**
+//    * @Route("/commandes/historique", name="order_history")
+//    */
+//   public function getByCurrentUser(Security $security): Response
+//   {
+//     $user = $security->getUser();
+//     $orders = [];
+
+//     if($user){
+//       $bdd_user = $this->getDoctrine()
+//         ->getRepository(User::class)
+//         ->find($user->getId());
+
+//       $orders = $bdd_user->getOrders();
+//     }
+
+//     return $this->render('order/index.html.twig', [
+//       'orders' => $orders,
+//     ]);
+//   }
+// }
